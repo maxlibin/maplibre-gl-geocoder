@@ -1801,7 +1801,7 @@ test("geocoder", function (tt) {
   );
 
   tt.test(
-    "set input with suggestions, whileTypingShowSuggestionsOnly true",
+    "set input with suggestions, showSuggestionsOnlyWhileTyping true",
     function (t) {
       t.plan(3);
       setup({
@@ -1811,8 +1811,8 @@ test("geocoder", function (tt) {
         ),
         proximity: { longitude: -79.45, latitude: 43.65 },
         features: [Features.QUEEN_STREET],
-        showResultsWhileTyping: true,
-        whileTypingShowSuggestionsOnly: true,
+        showResultsWhileTyping: false,
+        showSuggestionsOnlyWhileTyping: true,
       });
 
       var searchMock = sinon.spy(geocoder, "_geocode");
